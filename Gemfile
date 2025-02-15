@@ -19,3 +19,5 @@ end
 group :development do
   gem 'byebug'
 end
+
+gem "rackup", "~> 2.2"
