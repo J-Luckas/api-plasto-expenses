@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require './app/usecases/users/create'
+require './app/usecases/users/find_one'
 
 class UserController
   def self.create( body )
@@ -8,4 +9,10 @@ class UserController
 
     user
   end
+  
+  def self.find_one( params )
+    user = Users::FindOne.new(params: params).call
+    user
+  end
+
 end
