@@ -2,6 +2,7 @@
 
 require './app/model/transaction'
 require './app/adapters/repositories/transaction_repository'
+require './app/adapters/exceptions/api_exception'
 
 module Transactions
   class Create
@@ -18,10 +19,6 @@ module Transactions
         transaction_type: @body[:transaction_type], 
         goal_definition_id: @body[:goal_definition_id], 
       ).to_hash
-
-      p transaction
-      p "pipipip"
-
 
       added_goal = @transaction_repository.create(transaction)
       added_goal

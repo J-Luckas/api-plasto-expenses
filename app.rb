@@ -8,9 +8,11 @@ Dotenv.load
 require './app/adapters/controllers/user_controller'
 require './app/adapters/controllers/goal_definition_controller'
 require './app/adapters/controllers/transaction_controller'
+require './app/adapters/exceptions/api_exception'
 
 set :database, { adapter: 'sqlite3', database: ENV['DB_PATH'] }
 set :port, 3001
+set :show_exceptions, false
 
 # USER
 
@@ -37,4 +39,11 @@ post '/transactions' do
   { data: TransactionController.create(JSON.parse(request.body.read, symbolize_names: true)) }.to_json
 end
 
+
+error ApiError do
+  error = env['sinatra.error']
+  content_type :json
+  status error.status
+  { error: error.message }.to_json
+end
 
