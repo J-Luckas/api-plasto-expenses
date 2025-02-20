@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 class User
-  attr_accessor :name
+  attr_accessor :name, :email, :password
 
-  def initialize(name:, spend_by_day:)
+  def initialize(name:, email:, password:)
     @name = name
-    @spend_by_day = spend_by_day
+    @email = email
+    @password = password
   end
 
   def to_hash 

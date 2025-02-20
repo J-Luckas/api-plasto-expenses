@@ -12,7 +12,7 @@ module Users
     end
 
     def call
-      user = @user.new(name: @body[:name], spend_by_day: @body[:spend_by_day]).to_hash
+      user = @user.new(name: @body[:name], email: @body[:email], password: @body[:password]).to_hash
 
       added_user = @user_repository.create(user)
       added_user

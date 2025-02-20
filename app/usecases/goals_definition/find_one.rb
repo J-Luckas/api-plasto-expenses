@@ -14,6 +14,9 @@ module GoalsDefinition
     def call
       found_goals = @goal_definition_repository.includes(:user, :transactions).where("id = ?", @params[:id]).first
       
+      if !found_goals
+        return found_goals
+      end 
       
       goal_hash = found_goals.attributes
       goal_hash["user"] = found_goals.user

@@ -10,7 +10,7 @@ gem 'rake'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'sqlite3'
-gem 'sinatra-contrib', '~> 3.0'
+gem 'sinatra-contrib'
 gem 'bcrypt'
 
 group :test do
