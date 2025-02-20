@@ -19,7 +19,7 @@ class AuthController
 
     payload = { user: user.attributes.except("password"), exp: Time.now.to_i + 3600 }
     token = JWT.encode(payload, ENV['VALID_ACCESS_SECRET'], 'HS256')
-    { token: token }
+    token
   end
   
   def self.sign_in( body )
