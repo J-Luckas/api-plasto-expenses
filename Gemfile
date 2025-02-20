@@ -24,3 +24,4 @@ end
 
 gem "rackup", "~> 2.2"
 gem 'jwt'
+gem 'sinatra-cors'
