@@ -10,8 +10,8 @@ class UserController
     user
   end
   
-  def self.find_one( params )
-    user = Users::FindOne.new(params: params).call
+  def self.find_one( user_id )
+    user = Users::FindOne.new(user_id: user_id).call
     user
   end
 

@@ -26,14 +26,14 @@ post '/auth/sign-in' do
   { access_token: AuthController.sign_in(JSON.parse(request.body.read, symbolize_names: true)) }.to_json
 end
 
-
 post '/auth/sign-up' do 
   { access_token: AuthController.sign_up(JSON.parse(request.body.read, symbolize_names: true)) }.to_json
 end
 
 # USERS
-get '/users/:user_id' do 
-  { data: UserController.find_one(params)}.to_json
+get '/users' do 
+  user = request.env['user']
+  { data: UserController.find_one(user['id'])}.to_json
 end
 
 # GOALS

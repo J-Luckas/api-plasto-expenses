@@ -14,6 +14,7 @@ module AuthGuard
 
         begin
           decoded_token = JWT.decode(access_token[1], ENV['VALID_ACCESS_SECRET'], true, { algorithm: 'HS256' })
+          @request.env['user'] = decoded_token.first['user'].except('exp')
         rescue JWT::ExpiredSignature
           raise ApiError.new( "Token de acesso inválido.", 401 )
         rescue JWT::VerificationError
