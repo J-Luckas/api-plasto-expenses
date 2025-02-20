@@ -1,4 +1,5 @@
 require 'jwt'
+require './app/adapters/exceptions/api_exception'
 
 module AuthGuard
   class JwtGuard
