@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User
-  attr_accessor :name, :spend_by_day
+  attr_accessor :name
 
   def initialize(name:, spend_by_day:)
     @name = name

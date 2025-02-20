@@ -10,6 +10,8 @@ gem 'rake'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'sqlite3'
+gem 'sinatra-contrib', '~> 3.0'
+gem 'bcrypt'
 
 group :test do
   gem 'rack-test'
@@ -21,3 +23,4 @@ group :development do
 end
 
 gem "rackup", "~> 2.2"
+gem 'jwt'

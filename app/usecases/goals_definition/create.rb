@@ -17,6 +17,7 @@ module GoalsDefinition
         description: @body[:description], 
         default: @body[:default], 
         user_id: @body[:user_id], 
+        spend_by_day: @body[:spend_by_day], 
       ).to_hash
 
       added_goal = @goal_definition_repository.create(goal_definition)

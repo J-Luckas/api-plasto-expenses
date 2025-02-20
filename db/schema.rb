@@ -15,6 +15,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_15_191933) do
     t.string "name"
     t.string "description"
     t.boolean "default"
+    t.float "spend_by_day"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -33,7 +34,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_15_191933) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.float "spend_by_day"
+    t.string "email"
+    t.string "password_hash"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

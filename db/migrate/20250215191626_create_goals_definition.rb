@@ -4,6 +4,7 @@ class CreateGoalsDefinition < ActiveRecord::Migration[8.0]
       t.string :name
       t.string :description
       t.boolean :default
+      t.float   :spend_by_day
       t.integer :user_id, null: false
       t.index [ :user_id ], name: "index_goals_definition_on_user_id"
       t.timestamps
